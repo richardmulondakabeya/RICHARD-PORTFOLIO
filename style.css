@@ -1,0 +1,186 @@
+/* Réinitialisation et styles de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Police générique, à adapter */
+    background-color: #f0f0f0; /* Couleur de fond pour voir le conteneur */
+    line-height: 1.6;
+}
+
+.resume-container {
+    max-width: 900px; /* Largeur approximative du CV */
+    margin: 30px auto;
+    background-color: #fff; /* Fallback si les autres échouent */
+    position: relative; /* Pour positionner l'image de profil */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Pour s'assurer que rien ne dépasse bizarrement */
+}
+
+/* En-tête */
+.resume-header {
+    background-color: #FFC107; /* Orange */
+    padding: 40px 50px 60px 50px; /* Plus de padding en bas pour l'espace */
+    position: relative;
+}
+
+.resume-header h1 {
+    font-size: 3em;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.resume-header .job-title {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: normal;
+    border-top: 3px solid #000000; /* Ligne noire sous le titre */
+    display: inline-block;
+    padding-top: 5px;
+}
+
+/* Conteneur et Image de profil */
+.profile-picture-container {
+    position: absolute;
+    top: 20px; /* Ajustez pour positionner verticalement */
+    right: 50px; /* Ajustez pour positionner horizontalement */
+    width: 160px; /* Taille de l'image */
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #000000; /* Bordure noire */
+    overflow: hidden; /* Pour que l'image reste ronde */
+    z-index: 10; /* Pour être au-dessus du contenu principal */
+    background-color: #ccc; /* Au cas où l'image ne charge pas */
+}
+
+.profile-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre bien le cercle */
+}
+
+
+/* Contenu Principal */
+.main-content {
+    display: flex;
+    background-color: #333333; /* Gris foncé */
+    color: #FAFAFA; /* Texte clair */
+    padding: 40px 50px;
+    padding-top: 80px; /* Plus de padding en haut à cause de l'image */
+}
+
+/* Colonnes */
+.left-column {
+    flex: 0 0 35%; /* La colonne de gauche prend 35% de l'espace */
+    padding-right: 30px;
+}
+
+.right-column {
+    flex: 1; /* La colonne de droite prend le reste de l'espace */
+    padding-left: 30px;
+    border-left: 1px solid #555; /* Séparateur visuel léger */
+}
+
+/* Sections communes */
+.main-content section {
+    margin-bottom: 30px;
+}
+
+.main-content h2 {
+    color: #FFC107; /* Titres en orange */
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #FFC107; /* Soulignement orange */
+    display: inline-block; /* Pour que le soulignement s'ajuste au texte */
+}
+
+.main-content p, .main-content li {
+    font-size: 0.9em;
+    color: #E0E0E0; /* Texte légèrement plus doux que blanc pur */
+    margin-bottom: 10px;
+}
+
+.main-content ul {
+    list-style: none; /* Enlève les puces par défaut */
+    padding-left: 0;
+}
+
+.main-content ul li {
+    margin-bottom: 8px;
+    padding-left: 15px; /* Indentation pour les listes */
+    position: relative;
+}
+
+/* Style spécifique pour les puces d'expérience */
+.experience ul li::before {
+    content: '•'; /* Puce personnalisée */
+    color: #FFC107; /* Couleur de la puce */
+    position: absolute;
+    left: 0;
+    top: 0px;
+    font-size: 1.2em; /* Taille de la puce */
+}
+
+
+/* Section Compétences (Skills) */
+.skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+.skills li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Pour aligner le texte et les points */
+    align-items: center;
+    padding-left: 0; /* Pas besoin d'indentation ici */
+}
+.skills li::before {
+    content: none; /* Pas de puce avant le texte des compétences */
+}
+
+.skills .dots {
+    font-size: 1.4em; /* Ajuste la taille des "points" */
+    letter-spacing: 2px; /* Espace entre les points */
+    color: #FFC107; /* Couleur des points actifs */
+    /* Utilise des caractères pleins et vides pour simuler */
+    /* Vous pourriez utiliser des span stylisés pour plus de contrôle */
+}
+/* Note: Les points vides (○) peuvent varier selon la police */
+
+
+/* Section Contact */
+.contact p {
+    margin-bottom: 5px;
+}
+
+/* Sections Education et Expérience */
+.entry {
+    margin-bottom: 20px;
+}
+
+.entry h3 {
+    color: #FFFFFF; /* Titre de l'entrée en blanc */
+    font-size: 1.1em;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.entry .date, .entry .job-title-exp {
+    color: #AAAAAA; /* Date/Titre du poste en gris clair */
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.experience .job-title-exp {
+    font-style: normal; /* Le titre du poste n'est pas en italique */
+    font-weight: bold;
+     color: #CCCCCC;
+}
